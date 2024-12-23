@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | News homepage</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <img src="./assets/images/logo.svg" alt="Logo">
+    </div>
+
+    <nav>
+      <img class="mobile-menu-icon" src="./assets/images/icon-menu.svg" alt="hamburger menu">
+      
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+         <li><a href="#new">New</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <main class="main">
+    <!-- The hero image  -->
+      <picture class="hero-picture">
+        <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width:920px)">
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="Hero image">
+      </picture>
+
+    <!-- the bright future -->
+    <section class="bright-future-container">
+      <article>
+        <h1 class="primary-head">The Bright Future of Web 3.0?</h1>
+      </article>
+      <article>
+        <p class="primary-paragraph"> We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
+  
+        <a class="btn" href="#">Read more</a>
+      </article>
+    </section>
+
+    <!-- new section -->
+    <section class="new-container" id="new">
+      <h2>New</h2>
+      <div>
+        <h3> Hydrogen VS Electric Cars</h3>
+        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </div>
+      
+      <div>
+        <h3>The Downsides of AI Artistry</h3>
+        <p>What are the possible adverse effects of on-demand AI image generation?</p>
+      </div>
+      
+      <div>
+        <h3> Is VC Funding Drying Up?</h3>
+        <p> Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      </div>
+    </section>
+    <!-- featured section -->
+    <section class="featured-section">
+    <!-- 01 -->
+      <article class="feature">
+        <div class="feature-img">
+        <img src="./assets/images/image-retro-pcs.jpg" alt="">
+      </div>
+      
+      <div>
+        <p class="featured-num">01</p>
+        <h3 class="featured-title">Reviving Retro PCs</h3>
+        <p class="featured-p"> What happens when old PCs are given modern upgrades?</p>
+      </div>
+    </article>
+    <!-- 02 -->
+    <article class="feature">
+        <div class="feature-img">
+        <img src="./assets/images/image-top-laptops.jpg" alt="">
+      </div>
+      
+      <div>
+        <p class="featured-num">02</p>
+        <h3 class="featured-title">Top 10 Laptops of 2022</h3>
+        <p class="featured-p">Our best picks for various needs and budgets.</p>
+      </div>
+    </article>
+
+    <article class="feature">
+        <div class="feature-img">
+        <img src="./assets/images/image-gaming-growth.jpg" alt="">
+      </div>
+      
+      <div>
+        <p class="featured-num">03</p>
+        <h3 class="featured-title">The Growth of Gaming</h3>
+        <p class="featured-p">How the pandemic has sparked fresh opportunities.</p>
+      </div>
+    </article>
+    </section>
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.x.com">Ejiro Frances</a>.
+  </footer>
+
+  <script>
+    const mobileMenu = document.querySelector(".mobile-menu-icon");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links>li>a");
+    const main = document.querySelector(".main");
+
+    mobileMenu.addEventListener("click", ()=> {
+      navLinks.classList.toggle("active")
+
+      if(navLinks.classList.contains("active")) {
+        mobileMenu.src = "./assets/images/icon-menu-close.svg";
+      } else {
+        mobileMenu.src = "./assets/images/icon-menu.svg";
+      }
+
+    });
+
+      links.forEach((li) => {
+         li.addEventListener("click", () => {
+          navLinks.classList.remove("active")
+        
+        mobileMenu.src = "./assets/images/icon-menu.svg";
+         })
+      })
+
+      main.addEventListener("click", ()=> {
+    navLinks.classList.remove("active")
+        
+        mobileMenu.src = "./assets/images/icon-menu.svg";
+      })
+    
+  </script>
+</body>
+</html>
