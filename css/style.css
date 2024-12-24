@@ -29,6 +29,8 @@ html {
   font-size: 62.5%;
 }
 body {
+  max-width: 90%;
+  margin: 0 auto;
   font-family: "inter";
   font-size: 1.5rem;
 }
@@ -53,7 +55,7 @@ img {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .mobile-menu-icon {
   position: relative;
@@ -91,7 +93,7 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 3.5rem;
-  margin: 1rem 1.5rem;
+  /* margin: 1rem 1.5rem; */
 }
 .hero-picture img {
   width: 100%;
@@ -212,6 +214,12 @@ img {
 }
 
 /* media query */
+@media (min-width: 600px) {
+  .bright-future-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (min-width: 920px) {
   .header {
     padding: 3rem 4rem;
